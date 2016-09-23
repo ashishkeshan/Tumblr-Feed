@@ -6,8 +6,19 @@
 //  Copyright © 2016 Ashish Keshan. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class PhotosDetailViewController: UIViewController {
 
+    @IBOutlet var largeImage: UIImageView!
+    var photoURL: NSURL?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let url = photoURL {
+            largeImage.setImageWithURL(url)
+        }
+    }
+    
 }
